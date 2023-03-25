@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="835e6fe6-88b8-44f6-a83f-ff2d9d7a1d9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Battleship.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Battleship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/MapStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/ShipStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/ShipType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ShipIllegalLocationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ShipNoneException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ShipTypeMismatchException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objects/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objects/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objects/Ship.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NIMynIlFD21Wg1CSuiyEf5zQaG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/caelb/Documents/Code/IntellIJ/TextBasedRPGGame",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Battleship" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Battleship" />
+      <module name="Battleship" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="835e6fe6-88b8-44f6-a83f-ff2d9d7a1d9b" name="Changes" comment="" />
+      <created>1679347402652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679347402652</updated>
+    </task>
+    <servers />
+  </component>
+</project>
