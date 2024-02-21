@@ -13,11 +13,8 @@ import java.util.Scanner;
 
 public class GameLoop {
     private int turn = 1;
-
     private final Scanner s;
-
     private final Player player1;
-
     private final Player player2;
 
     public GameLoop() {
@@ -88,7 +85,10 @@ public class GameLoop {
                 if (otherPlayer.getShipByType(type).getStatus() == ShipStatus.SUNK) {
                     win = true;
                     for (Ship ship : otherPlayer.getShips()) {
-                        if (ship.getStatus() != ShipStatus.SUNK) win = false;
+                        if (ship.getStatus() != ShipStatus.SUNK) {
+                            win = false;
+                            break;
+                        }
                     }
                     if (!win) {
                         System.out.println("You sunk " + otherPlayer.getNickname() + "'s " + type.toString().replaceAll("_", " ") + "!");
@@ -122,8 +122,7 @@ public class GameLoop {
         while (true) {
             changeTurn();
             player = getCurrentPlayer();
-            printBoard(player);
-            printShips(player);
+            printTurn(player);
             System.out.println("Where would you like to shoot?");
             doTurn();
         }
@@ -172,28 +171,51 @@ public class GameLoop {
         return s.nextLine();
     }
 
-    private void printBoard(Player player) {
+    private void printTurn(Player player) {
         System.out.println();
         System.out.print("   ");
-        for (int i = 0; i < 10; i++) {
-            System.out.print("     ");
-            System.out.print(i + 1);
-        }
-        for (int i = 0; i < 10; i++) {
-            System.out.println();
-            printLine();
-            System.out.print("  ");
-            System.out.print((char) (i + 65));
-            System.out.print("  ");
+        for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.print("|  ");
-                System.out.print(getCharacter(player.getMap(), j + 1, i + 1));
-                System.out.print("  ");
+                System.out.print("     ");
+                System.out.print(j + 1);
             }
-            System.out.print("|");
+            System.out.print("\t   ");
         }
         System.out.println();
-        printLine();
+        for (var i = 0; i < 10; i++) {
+            printDoubleLine();
+            System.out.println();
+            printBoard(player, i);
+            System.out.print("\t");
+            printShipsLine(player, i);
+            System.out.println();
+        }
+        printDoubleLine();
+        System.out.println();
+    }
+
+    private void printBoard(Player player, int i) {
+        System.out.print("  ");
+        System.out.print((char) (i + 65));
+        System.out.print("  ");
+        for (int j = 0; j < 10; j++) {
+            System.out.print("|  ");
+            System.out.print(getCharacter(player.getMap(), j + 1, i + 1));
+            System.out.print("  ");
+        }
+        System.out.print("|");
+    }
+
+    private void printShipsLine(Player player, int i) {
+        System.out.print("  ");
+        System.out.print((char) (i + 65));
+        System.out.print("  ");
+        for (int j = 0; j < 10; j++) {
+            System.out.print("|  ");
+            System.out.print(getCharacter(player, getOtherPlayer(player), j + 1, i + 1));
+            System.out.print("  ");
+        }
+        System.out.print("|");
     }
 
     private void printShips(Player player) {
@@ -206,6 +228,7 @@ public class GameLoop {
         for (int i = 0; i < 10; i++) {
             System.out.println();
             printLine();
+            System.out.println();
             System.out.print("  ");
             System.out.print((char) (i + 65));
             System.out.print("  ");
@@ -218,7 +241,9 @@ public class GameLoop {
         }
         System.out.println();
         printLine();
+        System.out.println();
     }
+
 
     private Player getOtherPlayer(Player player) {
         if (player == player1) return player2;
@@ -344,7 +369,13 @@ public class GameLoop {
     }
 
     private void printLine() {
-        System.out.println("     +-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+        System.out.print("     +-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+    }
+
+    private void printDoubleLine() {
+        printLine();
+        System.out.print("  ");
+        printLine();
     }
 
     private char getCharacter(Map map, int x, int y) {
